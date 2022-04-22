@@ -1,0 +1,15 @@
+services:
+  mkdocs:
+    restart: always
+    build:
+      context: ./MkDocs
+      dockerfile: Dockerfile
+    entrypoint: mkdocs serve -a 0.0.0.0:8000
+    expose:
+      - "8000"
+    ports:
+      - "127.0.0.1:8001:8000"
+    volumes:
+      - type: bind
+        source: "./document"
+        target: "/document/fem"
