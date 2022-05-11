@@ -1,6 +1,6 @@
 services:
   mkdocs:
-    restart: no
+    restart: "no"
     build:
       context: ./MkDocs
       dockerfile: Dockerfile
